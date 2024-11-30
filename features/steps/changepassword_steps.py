@@ -1,18 +1,18 @@
 from behave import *
-
 from features.POM.landing_page import Landing_page
 
 
 @when(u'i click on change password link')
 def step_impl(context):
-   context.landing_obj=Landing_page(context.driver)
+   context.landing_page=Landing_page(context.driver)
+   context.Password_change_page=context.landing_page.change_password()
 
 
 @when(u'do necessary changes')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: When do necessary changes')
+   context.Password_change_page.change("selenium","selenium")
 
 
 @then(u'password changed message should dispaly')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Then password changed message should dispaly')
+   context.landing_page.password_changed()

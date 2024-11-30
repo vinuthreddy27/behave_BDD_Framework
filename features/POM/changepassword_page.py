@@ -11,7 +11,7 @@ class Password_change_page(Base):
     def change(self,password,c_pass):
         self.Send_keys(self.password,password)
         self.Send_keys(self.c_password,c_pass)
-        self.Send_keys(self.conform_btn)
+        self.Click(self.conform_btn)
 
     def display_error_msg(self):
         self.print_text(self.error_msg)

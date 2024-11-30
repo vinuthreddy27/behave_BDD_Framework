@@ -17,6 +17,7 @@ class Homepage(Base):
     gift_locator = ("xpath", "//a[.='Gift Certificates']")
     contact_us_locator = ("xpath", "//a[.='Contact Us']")
     wishlist_link = ("id", "wishlist-total")
+
     cart_total = ("css selector", "*[id='cart']")
     shopping_cart = ("css selector", "a[title='Shopping Cart']")
     downloads_link = ("xpath", "//li[@class='dropdown']//li[.='Downloads']")
