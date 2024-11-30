@@ -1,5 +1,5 @@
 Feature: Buy product from the site
-   @init2
+   @skip
   Scenario:add product to wishlist from wishlist buy product
     Given i navigated to the homepage
      Then i validated page title

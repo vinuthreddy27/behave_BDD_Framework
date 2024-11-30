@@ -1,8 +1,11 @@
+from features.POM.review_page import Review_page
 from features.library.lib import Base
 
 
 class ProductPage(Base):
 
+    product_link = ("link text", "iPod Touch")
+    review_link = ("xpath", "//a[.='Write a review']")
     cart_btn=("xpath","//span[.='Add to Cart']")
     wishlist_btn=("css selector","button[data-original-title='Add to Wish List']")
     message=("xpath","//div[contains(@class,'alert')]")
@@ -15,4 +18,9 @@ class ProductPage(Base):
 
     def wishlist_link(self):
         self.Click(self.wishlist_btn)
-        
+
+    def click_product_link(self):
+        self.Click(self.product_link)
+        self.Click(self.review_link)
+
+        return Review_page(self.driver)

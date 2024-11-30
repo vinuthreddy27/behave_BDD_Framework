@@ -1,4 +1,3 @@
-
 from behave import *
 from features.POM.homepage import Homepage
 
