@@ -8,8 +8,9 @@ class Landing_page(Base):
     edit_link = ("xpath", "//a[.='Edit your account information']")
     change_password_locator = ("xpath", "//ul[@class='list-unstyled']/..//a[.='Change your password']")
     A_account_link = ("xpath", "//a[.='Edit your affiliate information']")
-
     success_pass_changed = ("xpath", "//*[.='Success: Your password has been successfully updated.']")
+
+    affiilate_msg=("xpath","//*[.='Success: Your account has been successfully updated.']")
 
     def edit_account_info(self):
         self.Click(self.edit_link)
@@ -29,3 +30,7 @@ class Landing_page(Base):
     def password_changed(self):
         self.print_text(self.success_pass_changed)
         return self.Display_status(self.success_pass_changed)
+
+    def display(self):
+        self.print_text(self.affiilate_msg)
+        self.Display_status(self.affiilate_msg)

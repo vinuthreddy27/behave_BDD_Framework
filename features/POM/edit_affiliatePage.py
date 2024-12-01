@@ -18,5 +18,7 @@ class Edit_affiliate(Base):
         self.Send_keys(self.paypal_textfield,pay)
         self.Click(self.continue_btn)
 
-
+    def modify(self):
+        self.Send_keys(self.company_text_field,"my company")
+        self.Click(self.continue_btn)
 

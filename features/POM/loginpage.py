@@ -1,4 +1,5 @@
 from features.POM.landing_page import Landing_page
+from features.POM.product_page import ProductPage
 from features.library.lib import Base
 
 
@@ -16,9 +17,6 @@ class Login_page(Base):
         self.Click(self.login_btn)
 
         return Landing_page(self.driver)
-
-    def click_on_login(self):
-        self.Click(self.login_btn)
 
 
     def submit_the_form(self):
