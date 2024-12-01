@@ -1,7 +1,8 @@
 from features.POM.gift_page import Gift_page
-from features.POM.loginpage import Loginpage
+from features.POM.loginpage import  Login_page
 from features.POM.product_page import ProductPage
 from features.POM.registerpage import Register_page
+from features.POM.wishlist_page import wishlist_page
 from features.library.lib import Base
 
 
@@ -10,13 +11,19 @@ class Homepage(Base):
     my_account_locator = ("xpath", "//span[.='My Account']")
     register_locator = ("xpath", "//a[.='Register']")
     login_locator=("xpath","//a[.='Login']")
+
     search_tf=("name","search")
     btn=("css selector","span[class='input-group-btn']")
+
     wishlist=("xpath","//span[.='Wish List (1)']")
+
     logout_btn = ("xpath", "//ul[@class='dropdown-menu dropdown-menu-right']/..//a[.='Logout']")
+
     gift_locator = ("xpath", "//a[.='Gift Certificates']")
+
     contact_us_locator = ("xpath", "//a[.='Contact Us']")
-    wishlist_link = ("id", "wishlist-total")
+
+    cart_link = ("id", "wishlist-total")
 
     cart_total = ("css selector", "*[id='cart']")
     shopping_cart = ("css selector", "a[title='Shopping Cart']")
@@ -35,7 +42,7 @@ class Homepage(Base):
         self.Click(self.my_account_locator)
         self.Click(self.login_locator)
 
-        return Loginpage(self.driver)
+        return Login_page(self.driver)
 
     def Send_product(self,product):
         self.Send_keys(self.search_tf,product)
@@ -54,3 +61,8 @@ class Homepage(Base):
         self.Click(self.gift_locator)
 
         return Gift_page(self.driver)
+
+    def wish_link(self):
+        self.Click(self.wishlist)
+
+        return wishlist_page(self.driver)

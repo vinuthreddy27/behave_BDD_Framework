@@ -1,7 +1,7 @@
 from features.library.lib import Base
 
 
-class Account_creation(Base):
+class Registered_success(Base):
 
     message=("xpath","//div[@id='content']/.//p[.='Congratulations! Your new account has been successfully created!']")
 

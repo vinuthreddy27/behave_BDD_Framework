@@ -1,5 +1,5 @@
 Feature: gift functionality
-  @fun
+
   Scenario: Send gift to an user
     Given  i nagigated to login page
     When  i enter valid credentials into respective textfield

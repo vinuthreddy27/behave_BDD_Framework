@@ -1,6 +1,6 @@
 Feature: Review Functionality
 
-  @skip
+
   Scenario: Add a review for product
     Given i navigated to login page
     When i enterd valid credentials into email and password fields

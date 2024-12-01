@@ -5,12 +5,12 @@ from features.POM.landing_page import Landing_page
 @when(u'i click on change password link')
 def step_impl(context):
    context.landing_page=Landing_page(context.driver)
-   context.Password_change_page=context.landing_page.change_password()
+   context.password_page=context.landing_page.change_password()
 
 
 @when(u'do necessary changes')
 def step_impl(context):
-   context.Password_change_page.change("selenium","selenium")
+   context.password_page.change("selenium","selenium")
 
 
 @then(u'password changed message should dispaly')

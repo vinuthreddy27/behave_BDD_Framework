@@ -1,6 +1,6 @@
 Feature: Add to cart functionality
 
-  @skip
+
   Scenario: search any product add to cart
     Given i navigated to login page
     When i entered email  and password  into respective fields

@@ -13,6 +13,7 @@ class Gift_page(Base):
     agree_checkbox=("xpath","//input[@name='agree']")
     continue_btn=("xpath","//input[@value='Continue']")
 
+    proper_message=("xpath","//p[contains(.,'Thank you for purchasing a gift certificate!')]")
 
 
     def gift(self,name,mail,msg,amnt):
@@ -24,3 +25,7 @@ class Gift_page(Base):
         self.Send_keys(self.amount,amnt)
         self.Click(self.agree_checkbox)
         self.Click(self.continue_btn)
+
+    def get_message(self):
+        self.print_text(self.proper_message)
+        self.Display_status(self.proper_message)

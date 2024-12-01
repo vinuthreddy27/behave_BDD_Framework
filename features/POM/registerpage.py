@@ -1,4 +1,4 @@
-from features.POM.account_created_page import Account_creation
+from features.POM.account_created_page import  Registered_success
 from features.library.lib import Base
 
 class Register_page(Base):
@@ -27,5 +27,5 @@ class Register_page(Base):
     def submit_the_form(self):
         self.Submit(self.password_locator)
 
-        return Account_creation(self.driver)
+        return Registered_success(self.driver)
 

@@ -2,7 +2,7 @@ from features.POM.landing_page import Landing_page
 from features.library.lib import Base
 
 
-class Loginpage(Base):
+class Login_page(Base):
 
     email_locator = ("id", "input-email")
     password_locator = ("id", "input-password")
@@ -19,6 +19,10 @@ class Loginpage(Base):
 
     def click_on_login(self):
         self.Click(self.login_btn)
+
+
+    def submit_the_form(self):
+        self.Submit(self.email_locator)
 
     def Warning_msg(self):
       self.Display_status(self.warning_message)

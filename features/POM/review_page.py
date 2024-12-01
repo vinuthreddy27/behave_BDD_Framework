@@ -8,6 +8,7 @@ class Review_page(Base):
     continue_btn = ("id", "button-review")
     warning_msgg=("xpath","//div[contains(@class,'alert')]")
     success_msg=("xpath","//*[.=' Thank you for your review. It has been submitted to the webmaster for approval.']")
+
     def add_a_review(self,yourname,text):
         self.Send_keys(self.yourname_tf,yourname)
         self.Send_keys(self.text_area,text)

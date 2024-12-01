@@ -1,5 +1,5 @@
 Feature: password_change functionality
-  @init
+
   Scenario: change current password
     Given  i nagigated to login page
     When  i enter valid credentials into respective textfield

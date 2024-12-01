@@ -1,4 +1,5 @@
 from features.POM.review_page import Review_page
+from features.POM.wishlist_page import wishlist_page
 from features.library.lib import Base
 
 
@@ -9,6 +10,8 @@ class ProductPage(Base):
     cart_btn=("xpath","//span[.='Add to Cart']")
     wishlist_btn=("css selector","button[data-original-title='Add to Wish List']")
     message=("xpath","//div[contains(@class,'alert')]")
+
+    product_match=("xpath","//h2[.='Products meeting the search criteria']")
 
     def btn(self):
         self.Click(self.cart_btn)
@@ -24,3 +27,13 @@ class ProductPage(Base):
         self.Click(self.review_link)
 
         return Review_page(self.driver)
+
+    def get_text(self):
+        self.print_text(self.message)
+        self.Display_status(self.message)
+
+        return wishlist_page(self.driver)
+
+    def get_message(self):
+        self.print_text(self.product_match)
+        self.Display_status(self.product_match)

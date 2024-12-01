@@ -9,17 +9,16 @@ Feature: Login feature
     Then   i enter valid credentials into respective textfield
     And    user should login successfully
 
-  @skip
+
   Scenario: Login with inValid Credentials
     Then   i enter invalid credentials into respective textfield
     And    user should not  login successfully
 
-  @skip
   Scenario: Login with only email Credential
     Then   i enter email credential into respective textfield
     And    user should not  login successfully
 
-  @skip
+
   Scenario: Login with only password Credential
     Then   i enter password Credential into respective textfield
     And    user should not  login successfully

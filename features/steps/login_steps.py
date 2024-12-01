@@ -6,7 +6,7 @@ from features.POM.homepage import Homepage
 def step_impl(context):
 
    context.homepage=Homepage(context.driver)
-   context.Loginpage=context.homepage.homepage_login()
+   context.login_page=context.homepage.homepage_login()
 
 @when(u'i validate the title')
 def step_impl(context):
@@ -16,34 +16,33 @@ def step_impl(context):
 
 @then(u'i enter valid credentials into respective textfield')
 def step_impl(context):
-       context.Loginpage.login("reddyvinuth27@gmail.com",
-                   "selenium")
+       context.login_page.login("reddyvinuth27@gmail.com","selenium")
 
 @then(u'user should login successfully')
 def step_impl(context):
-     context.Loginpage.conform_msg()
+     context.login_page.conform_msg()
 
 
 @then(u'i enter invalid credentials into respective textfield')
 def step_impl(context):
 
-    context.Loginpage.login("reddyvinuth27@gmail.com",
+    context.login_page.login("reddyvinuth27@gmail.com",
                            "selen")
 
 @then(u'i enter email credential into respective textfield')
 def step_impl(context):
 
-    context.Loginpage.login("reddyvinuth27@gmail.com",
+    context.login_page.login("reddyvinuth27@gmail.com",
                     "")
 
 @then(u'i enter password Credential into respective textfield')
 def step_impl(context):
-    context.Loginpage.login("",
+    context.login_page.login("",
                     "selenium")
 
 @then(u'user should not  login successfully')
 def step_impl(context):
 
-    context.Loginpage.Warning_msg()
+    context.login_page.Warning_msg()
 
 

@@ -1,6 +1,6 @@
 Feature: product search functionality
 
-  @skip
+
   Scenario Outline: Search for valid product
     Given i navigated to homepage
     Then i login with valid credentials
