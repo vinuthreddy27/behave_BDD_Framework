@@ -1,6 +1,7 @@
 from features.POM.changepassword_page import Password_change_page
 from features.POM.edit_affiliatePage import Edit_affiliate
 from features.POM.modify_accountpage import Modify_account
+from features.POM.registerpage import Register_page
 from features.library.lib import Base
 
 
@@ -9,7 +10,7 @@ class Landing_page(Base):
     change_password_locator = ("xpath", "//ul[@class='list-unstyled']/..//a[.='Change your password']")
     A_account_link = ("xpath", "//a[.='Edit your affiliate information']")
     success_pass_changed = ("xpath", "//*[.='Success: Your password has been successfully updated.']")
-
+    register_link=("link text","Register")
     affiilate_msg=("xpath","//*[.='Success: Your account has been successfully updated.']")
 
     def edit_account_info(self):
@@ -34,3 +35,8 @@ class Landing_page(Base):
     def display(self):
         self.print_text(self.affiilate_msg)
         self.Display_status(self.affiilate_msg)
+
+
+    def click_register(self):
+        self.Click(self.register_link)
+        return Register_page(self.driver)

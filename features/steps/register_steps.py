@@ -1,4 +1,3 @@
-from time import sleep
 
 from behave import *
 from features.POM.homepage import Homepage
@@ -29,3 +28,23 @@ def step_impl(context):
 @when(u'user should login successfully')
 def step_impl(context):
    context.registered_page.success_msg()
+
+
+@when(u'i clicked on continue btn')
+def step_impl(context):
+    context.homepage_obj=Homepage(context.driver)
+    context.login_page=context.homepage_obj.homepage_login()
+    context.login_page.click_on_continue()
+
+
+@then(u'register page should display')
+def step_impl(context):
+    if context.driver.title == "Register Account":
+        print("yes")
+    print(context.driver.title)
+
+@then(u'i clicked on register link')
+def step_impl(context):
+    context.login_page=context.homepage.homepage_login()
+    context.landing_page=context.login_page.login("reddyvinuth27@gmail.com","selenium")
+    context.landing_page.click_register()

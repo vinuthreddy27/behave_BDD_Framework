@@ -31,7 +31,7 @@ def step_impl(context):
 @then(u'product should be added to wishlist')
 def step_impl(context):
 
-  context.wishlist_Page=context.product_page.get_text()
+  context.product_page.get_text()
 
 
 @then(u'i clik on wishlist and remove product from wishlist')

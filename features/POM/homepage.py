@@ -1,5 +1,6 @@
 from features.POM.gift_page import Gift_page
 from features.POM.loginpage import  Login_page
+from features.POM.logout_page import  Logout_page
 from features.POM.product_page import ProductPage
 from features.POM.registerpage import Register_page
 from features.POM.wishlist_page import wishlist_page
@@ -66,3 +67,10 @@ class Homepage(Base):
         self.Click(self.wishlist)
 
         return wishlist_page(self.driver)
+
+
+    def click_on_logout(self):
+        self.Click(self.my_account_locator)
+        self.Click(self.logout_link)
+
+        return Logout_page(self.driver)

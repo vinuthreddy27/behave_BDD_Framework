@@ -1,9 +1,10 @@
 from features.POM.landing_page import Landing_page
-from features.POM.product_page import ProductPage
+from features.POM.registerpage import Register_page
 from features.library.lib import Base
 
 
 class Login_page(Base):
+    continue_btn=("link text","Continue")
 
     email_locator = ("id", "input-email")
     password_locator = ("id", "input-password")
@@ -27,3 +28,9 @@ class Login_page(Base):
 
     def conform_msg(self):
      self.Display_status(self.conform_message)
+
+
+    def click_on_continue(self):
+        self.Click(self.continue_btn)
+
+        return Register_page(self.driver)
