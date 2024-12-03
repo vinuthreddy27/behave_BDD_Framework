@@ -39,4 +39,5 @@ class Landing_page(Base):
 
     def click_register(self):
         self.Click(self.register_link)
+
         return Register_page(self.driver)

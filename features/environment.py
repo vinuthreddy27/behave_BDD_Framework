@@ -12,7 +12,7 @@ def before_scenario(context,driver):
         context.driver = webdriver.Firefox()
     else:
         print("invalid browser")
-    context.driver.implicitly_wait(10)
+    context.driver.implicitly_wait(3)
     context.driver.get(configReader.read_configuration("basic info","url"))
     context.driver.maximize_window()
 
