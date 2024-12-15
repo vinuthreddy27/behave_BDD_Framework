@@ -10,7 +10,7 @@ class ProductPage(Base):
     cart_btn=("xpath","//span[.='Add to Cart']")
     wishlist_btn=("css selector","button[data-original-title='Add to Wish List']")
     message=("xpath","//div[contains(@class,'alert')]")
-
+    no_Product_match=("xpath","//p[.='There is no product that matches the search criteria.']")
     product_match=("xpath","//h2[.='Products meeting the search criteria']")
 
     def btn(self):
@@ -37,3 +37,7 @@ class ProductPage(Base):
     def get_message(self):
         self.print_text(self.product_match)
         self.Display_status(self.product_match)
+
+    def no_message(self):
+        self.print_text(self.no_Product_match)
+        self.Display_status(self.no_Product_match)

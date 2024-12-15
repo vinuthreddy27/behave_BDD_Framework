@@ -1,5 +1,4 @@
 from behave import *
-
 from features.POM.homepage import Homepage
 
 
@@ -21,8 +20,13 @@ def step_impl(context,product):
 
 @then(u'product should display')
 def step_impl(context):
+   assert context.ProductPage.get_message()
 
-   context.ProductPage.get_message()
+
+@then(u'no product message should display')
+def step_impl(context):
+    assert context.ProductPage.no_message()
+
 
 
 
