@@ -1,19 +1,25 @@
 import allure
 from selenium import webdriver
-from utilites import configReader
+from configurations.config import TestData
+
 
 def before_scenario(context,driver):
-    browser_name=configReader.read_configuration("basic info","browser")
-    if browser_name.__eq__("chrome"):
+
+    browser=TestData.browser
+    if browser.__eq__("chrome"):
         context.driver=webdriver.Chrome()
-    elif browser_name.__eq__("edge"):
-        context.driver = webdriver.Edge()
-    elif browser_name.__eq__("firefox"):
-        context.driver = webdriver.Firefox()
+
+    elif browser.__eq__("firefox"):
+        context.driver=webdriver.Firefox()
+
+    elif browser.__eq__("edge"):
+        context.driver=webdriver.Edge()
+
     else:
-        print("invalid browser")
+        print("provide valid browser")
+
     context.driver.implicitly_wait(3)
-    context.driver.get(configReader.read_configuration("basic info","url"))
+    context.driver.get(TestData.base_url)
     context.driver.maximize_window()
 
 def after_scenario(context,driver):
