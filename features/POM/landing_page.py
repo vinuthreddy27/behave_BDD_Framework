@@ -26,7 +26,8 @@ class Landing_page(Base):
     def edit_affiliate_account(self):
         self.Click(self.A_account_link)
 
-        return Edit_affiliate(self.driver)
+        affiliate_page=Edit_affiliate(self.driver)
+        return affiliate_page
 
     def password_changed(self):
         self.print_text(self.success_pass_changed)

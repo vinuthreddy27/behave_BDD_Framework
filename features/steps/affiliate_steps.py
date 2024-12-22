@@ -1,18 +1,29 @@
 from behave import *
+from features.POM.loginpage import Login_page
 
-from features.POM.landing_page import Landing_page
-
-
-@then(u'i clicked on edit affiliate link')
+@when(u'i validated page title')
 def step_impl(context):
-    context.landing_page=Landing_page(context.driver)
-    context.affiliate_page=context.landing_page.edit_affiliate_account()
+    if context.driver.title=="Account Login":
+        print("yes")
+    else:
+        print("no")
 
-@then(u'do neceassary changes')
+@when(u'i entered email and password into textfields')
 def step_impl(context):
-   context.affiliate_page.modify()
+    context.login_page=Login_page(context.driver)
+    context.landing_page=context.login_page.login("reddyvinuth27@gmail.com","selenium")
+
+
+@when(u'i clicked on edit affiliate link')
+def step_impl(context):
+   context.affiliate_page=context.landing_page.edit_affiliate_account()
+
+
+@when(u'do neceassary changes')
+def step_impl(context):
+    context.affiliate_page.modify()
 
 
 @then(u'successfully changed message should display')
 def step_impl(context):
-  context.landing_page.display()
+    context.landing_page.display()

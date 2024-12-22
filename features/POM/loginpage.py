@@ -17,7 +17,8 @@ class Login_page(Base):
         self.Send_keys(self.password_locator,password)
         self.Click(self.login_btn)
 
-        return Landing_page(self.driver)
+        landing_page=Landing_page(self.driver)
+        return landing_page
 
 
     def submit_the_form(self):

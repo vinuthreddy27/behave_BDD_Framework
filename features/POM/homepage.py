@@ -43,7 +43,9 @@ class Homepage(Base):
         self.Click(self.my_account_locator)
         self.Click(self.login_locator)
 
-        return Login_page(self.driver)
+        login_page=Login_page(self.driver)
+
+        return login_page
 
     def Send_product(self,product):
         self.Send_keys(self.search_tf,product)
