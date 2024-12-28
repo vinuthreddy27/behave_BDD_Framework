@@ -16,7 +16,7 @@ class Homepage(Base):
     search_tf=("name","search")
     btn=("css selector","span[class='input-group-btn']")
 
-    wishlist=("xpath","//span[.='Wish List (1)']")
+    wishlist=("xpath","//span[contains(.,'Wish List')]")
 
     logout_btn = ("xpath", "//ul[@class='dropdown-menu dropdown-menu-right']/..//a[.='Logout']")
 
@@ -53,13 +53,6 @@ class Homepage(Base):
 
         return ProductPage(self.driver)
 
-
-    def wish_list(self):
-        self.Click(self.wishlist)
-
-        return ProductPage(self.driver)
-
-
     def click_giftlink(self):
         self.Click(self.gift_locator)
 
@@ -68,8 +61,8 @@ class Homepage(Base):
     def wish_link(self):
         self.Click(self.wishlist)
 
-        return wishlist_page(self.driver)
-
+        wish_page= wishlist_page(self.driver)
+        return wish_page
 
     def click_on_logout(self):
         self.Click(self.my_account_locator)

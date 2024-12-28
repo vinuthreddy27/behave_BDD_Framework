@@ -2,7 +2,7 @@ Feature: Buy product from the site
 
   Background:
      Given i navigated to the homepage
-     Then i validated page title
+     When i validated page title
      And i entered email and password into textfields
      And i entered a product name into respective field
      And i clicked on the wishlist btn
