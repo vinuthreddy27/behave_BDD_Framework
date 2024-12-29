@@ -16,7 +16,7 @@ def step_impl(context):
 
 @then(u'i enter valid credentials into respective textfield')
 def step_impl(context):
-       context.login_page.login("reddyvinuth27@gmail.com","selenium")
+       context.login_page.login("reddyvinuth27@gmail.com","seleniu")
 
 @then(u'user should login successfully')
 def step_impl(context):
